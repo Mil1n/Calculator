@@ -41,6 +41,7 @@ function evaluate(){
     if (!Number.isFinite(result)) throw new Error('Результат не является конечным числом.');
     const rendered = fmt(result);
     $('result').textContent = `Результат: ${rendered}`;
+    $('result').animate([{transform:'scale(1)'},{transform:'scale(1.06)'},{transform:'scale(1)'}],{duration:320,easing:'ease-out'});
     $('explain').textContent = `${note}\n${explain(raw)}`.trim();
     state.history.unshift({expr: raw, result: rendered});
     saveHistory(); renderHistory();
