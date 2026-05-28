@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0f172a" />
-  <title>Calculator</title>
+  <title>Smart Math Assistant</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <h1>🚀 Calculator</h1>
+    <h1>Calculator <span>Smart Math Assistant</span></h1>
     <div class="controls">
       <select id="mode">
         <option value="basic">Быстрый</option>
@@ -29,7 +29,8 @@
   <main>
     <section class="panel calc-panel">
       <label for="expr">Выражение</label>
-      <input id="expr" placeholder="Например: 2*(15+5)" />
+      <input id="expr" placeholder="15% от 320 + √144" />
+      <p class="hint">Поддержка: проценты, √, степени, функции, единицы mm/cm/m/km, mg/g/kg, s/min/h.</p>
 
       <div class="calculator-grid" id="calcButtons">
         <button data-k="C" class="action">C</button>
@@ -58,14 +59,14 @@
       </div>
 
       <div class="row">
-        <button id="evalBtn">Посчитать</button>
+        <button id="evalBtn">📌 Рассчитать</button>
         <button id="clearBtn">Очистить</button>
         <button id="shareBtn">Share-link</button>
         <button id="exportBtn">Экспорт CSV</button>
       </div>
-      <p id="result">Результат: —</p>
+      <p id="result">📌 Результат: —</p>
       <details>
-        <summary>Показать формулу/объяснение</summary>
+        <summary>🧮 Ход решения</summary>
         <pre id="explain"></pre>
       </details>
       <p id="error" class="error"></p>
@@ -74,7 +75,7 @@
     <section id="scientificPanel" class="panel hidden">
       <h2>Научные функции</h2>
       <div class="row wrap" id="sciButtons"></div>
-      <small>Поддержка: sin, cos, tan, sqrt, log, ln, π, e, степени.</small>
+      <small>Поддержка: sin, cos, tan, sqrt, log, ln, abs, π, e, степени, проценты.</small>
     </section>
 
     <section id="financePanel" class="panel hidden">
@@ -85,7 +86,7 @@
         <input id="loanMonths" type="number" placeholder="Срок (мес.)" />
       </div>
       <button id="loanCalc">Рассчитать платёж</button>
-      <p id="loanResult">Платёж: —</p>
+      <p id="loanResult">📌 Платёж: —</p>
     </section>
 
     <section id="householdPanel" class="panel hidden">
